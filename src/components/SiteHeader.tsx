@@ -67,6 +67,11 @@ export function SiteHeader() {
               {l.label}
             </Link>
           ))}
+          <Button asChild size="sm" className="mt-2 w-full">
+            <Link to="/jobs" onClick={() => setOpen(false)}>
+              Browse vacancies
+            </Link>
+          </Button>
         </nav>
       ) : null}
     </header>

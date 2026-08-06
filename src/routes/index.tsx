@@ -81,7 +81,7 @@ function Index() {
                 alt="Students and recent graduates working on laptops in a shared study space"
                 width={1600}
                 height={1104}
-                className="h-full w-full object-cover"
+                className="h-auto w-full object-cover md:h-full"
               />
             </div>
           </div>
