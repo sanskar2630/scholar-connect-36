@@ -44,20 +44,20 @@ function Index() {
 
       <main>
         <section className="surface-panel">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:gap-10 sm:py-16 md:grid-cols-2 md:py-24">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 px-3 py-1 text-xs font-medium text-accent">
                 <Sparkles className="size-3.5" /> Built for scholars, not recruiters
               </span>
-              <h1 className="mt-5 text-4xl font-bold leading-[1.05] md:text-6xl">
+              <h1 className="mt-5 text-3xl font-bold leading-[1.1] sm:text-4xl md:text-6xl">
                 Your degree is done. Now find the job that fits it.
               </h1>
               <p className="mt-5 max-w-xl text-base opacity-85 md:text-lg">
                 ScholarHire connects unemployed students and graduates with companies posting
                 fresher-friendly vacancies — sorted by category, qualification and location.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" variant="secondary">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
                   <Link to="/jobs">
                     <Search className="size-4" /> Find jobs by category
                   </Link>
@@ -66,7 +66,7 @@ function Index() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-accent/50 bg-transparent text-accent hover:bg-accent hover:text-accent-foreground"
+                  className="w-full border-accent/50 bg-transparent text-accent hover:bg-accent hover:text-accent-foreground sm:w-auto"
                 >
                   <Link to="/post-job">
                     <Building2 className="size-4" /> Post a vacancy
@@ -81,16 +81,16 @@ function Index() {
                 alt="Students and recent graduates working on laptops in a shared study space"
                 width={1600}
                 height={1104}
-                className="h-full w-full object-cover"
+                className="h-auto w-full object-cover md:h-full"
               />
             </div>
           </div>
 
           <div className="border-t border-accent/15">
-            <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4">
+            <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-5 px-4 py-8 sm:gap-6 md:grid-cols-4">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <dt className="text-2xl font-bold md:text-3xl">{s.value}</dt>
+                  <dt className="text-xl font-bold sm:text-2xl md:text-3xl">{s.value}</dt>
                   <dd className="mt-1 text-sm opacity-75">{s.label}</dd>
                 </div>
               ))}
@@ -98,10 +98,10 @@ function Index() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 py-16">
+        <section className="mx-auto max-w-6xl px-4 py-12 md:py-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-bold">Browse by category</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">Browse by category</h2>
               <p className="mt-2 text-muted-foreground">
                 Pick the field you studied for — every listing states the qualification required.
               </p>
@@ -117,10 +117,10 @@ function Index() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 pb-16">
+        <section className="mx-auto max-w-6xl px-4 pb-12 md:pb-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-bold">Latest vacancies</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">Latest vacancies</h2>
               <p className="mt-2 text-muted-foreground">
                 Openings posted by companies actively hiring freshers this month.
               </p>
@@ -131,7 +131,7 @@ function Index() {
               </Link>
             </Button>
           </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
@@ -139,8 +139,8 @@ function Index() {
         </section>
 
         <section className="mx-auto max-w-6xl px-4 pb-4">
-          <div className="rounded-2xl border border-border bg-card p-8 md:p-12">
-            <h2 className="text-3xl font-bold">How it works</h2>
+          <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 md:p-12">
+            <h2 className="text-2xl font-bold sm:text-3xl">How it works</h2>
             <div className="mt-8 grid gap-8 md:grid-cols-3">
               {[
                 {

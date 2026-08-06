@@ -41,15 +41,15 @@ function PostJobPage() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="text-4xl font-bold">Post a vacancy</h1>
+      <main className="mx-auto max-w-3xl px-4 py-10 md:py-12">
+        <h1 className="text-3xl font-bold sm:text-4xl">Post a vacancy</h1>
         <p className="mt-2 text-muted-foreground">
           Tell us what you need and we&apos;ll list it under the right category for students and
           scholars to find.
         </p>
 
         <form
-          className="mt-10 space-y-5 rounded-2xl border border-border bg-card p-6 md:p-8"
+          className="mt-8 space-y-5 rounded-2xl border border-border bg-card p-5 sm:p-6 md:mt-10 md:p-8"
           onSubmit={(e) => {
             e.preventDefault();
             toast.success("Vacancy submitted", {
@@ -59,14 +59,14 @@ function PostJobPage() {
             setCategory("");
           }}
         >
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <Field id="company" label="Company name" placeholder="Northwind Labs" />
             <Field id="email" label="Contact email" type="email" placeholder="hr@company.com" />
           </div>
 
           <Field id="title" label="Job title" placeholder="Junior Frontend Developer" />
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="category">Category</Label>
               <Select value={category} onValueChange={setCategory} required>
@@ -85,7 +85,7 @@ function PostJobPage() {
             <Field id="location" label="Location / work mode" placeholder="Pune · Hybrid" />
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <Field id="pay" label="Salary or stipend" placeholder="₹4.5 – 6 LPA" />
             <Field
               id="qualification"

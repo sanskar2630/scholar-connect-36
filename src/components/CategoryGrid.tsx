@@ -25,7 +25,7 @@ const icons: Record<string, LucideIcon> = {
 
 export function CategoryGrid() {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {categories.map((c) => {
         const Icon = icons[c.icon] ?? Building2;
         const count = jobs.filter((j) => j.category === c.slug).length;
