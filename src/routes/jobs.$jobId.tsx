@@ -83,7 +83,7 @@ function JobDetail() {
 
           <h2 className="mt-6 text-xl font-semibold">Skills we look for</h2>
           <div className="mt-2 flex flex-wrap gap-2">
-            {job.skills.map((s) => (
+            {job.skills.map((s: string) => (
               <span
                 key={s}
                 className="rounded-full border border-border px-3 py-1 text-sm text-muted-foreground"
