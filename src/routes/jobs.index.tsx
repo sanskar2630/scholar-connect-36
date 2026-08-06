@@ -54,8 +54,8 @@ function JobsPage() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
-      <main className="mx-auto max-w-6xl px-4 py-12">
-        <h1 className="text-4xl font-bold">
+      <main className="mx-auto max-w-6xl px-4 py-10 md:py-12">
+        <h1 className="text-3xl font-bold sm:text-4xl">
           {activeName ? `${activeName} jobs` : "All job vacancies"}
         </h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
@@ -63,7 +63,7 @@ function JobsPage() {
           always free.
         </p>
 
-        <div className="relative mt-8 max-w-md">
+        <div className="relative mt-8 w-full max-w-md">
           <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={query}
@@ -74,11 +74,11 @@ function JobsPage() {
           />
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="-mx-4 mt-6 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
           <Link
             to="/jobs"
             search={{}}
-            className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
+            className={`shrink-0 rounded-full border px-3 py-1.5 text-sm transition-colors ${
               !category
                 ? "border-transparent bg-primary text-primary-foreground"
                 : "border-border text-muted-foreground hover:bg-secondary"
@@ -91,7 +91,7 @@ function JobsPage() {
               key={c.slug}
               to="/jobs"
               search={{ category: c.slug }}
-              className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
+              className={`shrink-0 rounded-full border px-3 py-1.5 text-sm transition-colors ${
                 category === c.slug
                   ? "border-transparent bg-primary text-primary-foreground"
                   : "border-border text-muted-foreground hover:bg-secondary"
@@ -107,13 +107,13 @@ function JobsPage() {
         </p>
 
         {results.length ? (
-          <div className="mt-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {results.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
           </div>
         ) : (
-          <div className="mt-6 rounded-xl border border-dashed border-border p-10 text-center">
+          <div className="mt-6 rounded-xl border border-dashed border-border p-6 text-center sm:p-10">
             <p className="font-medium">No vacancies match this search yet.</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Try another category or clear the search box.

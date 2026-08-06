@@ -3,8 +3,8 @@ import { GraduationCap } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-border bg-secondary/40">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 md:grid-cols-4">
+    <footer className="mt-16 border-t md:mt-24 border-border bg-secondary/40">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-10 sm:grid-cols-2 md:grid-cols-4 md:py-12">
         <div>
           <div className="flex items-center gap-2">
             <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -52,7 +52,7 @@ export function SiteFooter() {
           <p className="text-sm text-muted-foreground">Mon–Sat, 10:00–18:00 IST</p>
         </div>
       </div>
-      <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
+      <div className="border-t border-border px-4 py-5 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} ScholarHire. Built for scholars looking for their first break.
       </div>
     </footer>

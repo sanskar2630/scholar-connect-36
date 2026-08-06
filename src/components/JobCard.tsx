@@ -8,10 +8,10 @@ export function JobCard({ job }: { job: Job }) {
   const category = categories.find((c) => c.slug === job.category);
 
   return (
-    <article className="card-elevated hover:card-elevated-hover flex h-full flex-col rounded-xl border border-border bg-card p-5">
+    <article className="card-elevated hover:card-elevated-hover flex h-full flex-col rounded-xl border border-border bg-card p-4 sm:p-5">
       <div className="flex items-start justify-between gap-3">
-        <div>
-          <h3 className="text-lg font-semibold leading-snug">{job.title}</h3>
+        <div className="min-w-0">
+          <h3 className="text-base font-semibold leading-snug sm:text-lg">{job.title}</h3>
           <p className="mt-1 text-sm text-muted-foreground">{job.company}</p>
         </div>
         <Badge variant="secondary" className="shrink-0">
@@ -53,7 +53,7 @@ export function JobCard({ job }: { job: Job }) {
         ))}
       </div>
 
-      <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
         <span className="text-xs text-muted-foreground">Posted {job.posted}</span>
         <Button asChild size="sm" variant="secondary">
           <Link to="/jobs/$jobId" params={{ jobId: job.id }}>

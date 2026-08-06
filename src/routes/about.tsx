@@ -45,16 +45,16 @@ function AboutPage() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
-      <main className="mx-auto max-w-4xl px-4 py-12">
-        <h1 className="text-4xl font-bold">Why ScholarHire exists</h1>
-        <p className="mt-4 text-lg text-muted-foreground">
+      <main className="mx-auto max-w-4xl px-4 py-10 md:py-12">
+        <h1 className="text-3xl font-bold sm:text-4xl">Why ScholarHire exists</h1>
+        <p className="mt-4 text-base text-muted-foreground sm:text-lg">
           Millions of students finish their degree and then hit a wall: every opening wants
           experience, every portal wants a subscription, and the listings that do fit are buried.
           ScholarHire is a simple, category-first noticeboard for scholars who are out of college
           and out of work.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:mt-12 md:grid-cols-3">
           {values.map((v) => (
             <div key={v.title} className="card-elevated rounded-xl border border-border bg-card p-6">
               <v.icon className="size-6 text-accent" />
@@ -64,13 +64,13 @@ function AboutPage() {
           ))}
         </div>
 
-        <section className="surface-panel mt-14 rounded-2xl p-8 md:p-12">
-          <h2 className="text-2xl font-bold">For companies</h2>
+        <section className="surface-panel mt-12 rounded-2xl p-6 sm:p-8 md:mt-14 md:p-12">
+          <h2 className="text-xl font-bold sm:text-2xl">For companies</h2>
           <p className="mt-3 max-w-2xl opacity-85">
             Fresh graduates are trainable, motivated and often overlooked. Post your vacancy with a
             clear qualification bar and reach scholars who are actively searching today.
           </p>
-          <Button asChild size="lg" variant="secondary" className="mt-6">
+          <Button asChild size="lg" variant="secondary" className="mt-6 w-full sm:w-auto">
             <Link to="/post-job">Post a vacancy</Link>
           </Button>
         </section>

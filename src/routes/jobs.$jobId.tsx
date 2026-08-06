@@ -41,7 +41,7 @@ function JobDetail() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
-      <main className="mx-auto max-w-4xl px-4 py-12">
+      <main className="mx-auto max-w-4xl px-4 py-10 md:py-12">
         <Link
           to="/jobs"
           search={{}}
@@ -50,16 +50,16 @@ function JobDetail() {
           <ArrowLeft className="size-4" /> Back to all vacancies
         </Link>
 
-        <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
+        <div className="mt-6 rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <h1 className="text-3xl font-bold md:text-4xl">{job.title}</h1>
+              <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl">{job.title}</h1>
               <p className="mt-2 text-muted-foreground">{job.company}</p>
             </div>
             <Badge variant="secondary">{job.type}</Badge>
           </div>
 
-          <dl className="mt-6 grid gap-4 sm:grid-cols-2">
+          <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Detail icon={<MapPin className="size-4" />} label="Location" value={job.location} />
             <Detail
               icon={<IndianRupee className="size-4" />}
@@ -94,7 +94,7 @@ function JobDetail() {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-border pt-6">
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="w-full sm:w-auto">
               <a href={`mailto:hello@scholarhire.example?subject=Application: ${job.title}`}>
                 Apply for free
               </a>
@@ -107,14 +107,14 @@ function JobDetail() {
 
         {related.length ? (
           <section className="mt-12">
-            <h2 className="text-2xl font-bold">Similar vacancies</h2>
+            <h2 className="text-xl font-bold sm:text-2xl">Similar vacancies</h2>
             <ul className="mt-4 divide-y divide-border rounded-xl border border-border bg-card">
               {related.map((r) => (
                 <li key={r.id}>
                   <Link
                     to="/jobs/$jobId"
                     params={{ jobId: r.id }}
-                    className="flex flex-wrap items-center justify-between gap-2 p-4 hover:bg-secondary/60"
+                    className="flex flex-col gap-1 p-4 hover:bg-secondary/60 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-2"
                   >
                     <span className="font-medium">{r.title}</span>
                     <span className="text-sm text-muted-foreground">

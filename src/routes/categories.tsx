@@ -26,8 +26,8 @@ function CategoriesPage() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
-      <main className="mx-auto max-w-6xl px-4 py-12">
-        <h1 className="text-4xl font-bold">Job categories</h1>
+      <main className="mx-auto max-w-6xl px-4 py-10 md:py-12">
+        <h1 className="text-3xl font-bold sm:text-4xl">Job categories</h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
           Pick the field that matches your degree. Each category collects vacancies that accept
           students, freshers and unemployed graduates.
